@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Môn toán</p>
+    <input type="text" id = 'toan'>
+    <p>Văn</p>
+    <input type="text" id = 'van'>
+    <p>Anh</p>
+    <input type="text" id = 'anh'>
+    <p>Điểm khu vực</p>
+    <select name="" id="diemKV">
+        <option value="KV1">KV1</option>
+        <option value="KV2">KV2</option>
+        <option value="KV2-NT">KV2-NT</option>
+        <option value="KV3">KV3</option>
+    </select>
+    <button onclick="sumFunction()">Tính điểm</button>
+    <p id = 'sum'></p>
+    <script>
+        function sumFunction(){
+            let toan = +document.getElementById('toan').value;
+            let van = +document.getElementById('van').value;
+            let anh = +document.getElementById('anh').value;
+            sum = toan + van + anh
+            let diemKV = document.getElementById('diemKV').value;
+            switch (diemKV){
+                case 'KV1':
+                    sum += 0.75;
+                    break;
+                case 'KV2':
+                    sum += 0.25;
+                    break;   
+                case 'KV3':
+                    sum += 0;
+                    break;  
+                case 'KV2-NT':
+                    sum += 0.5;
+                    break; 
+            }
+
+            document.getElementById('sum').innerHTML = sum;
+        }
+        
+    </script>
+</body>
+</html>
